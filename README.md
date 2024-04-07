@@ -1,1 +1,1 @@
-# ulbi
+# webpack setup
