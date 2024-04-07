@@ -1,35 +1,23 @@
 // * - тк некоторые из библиотек не поддерживают default (import)
 import * as path from 'path';
 import * as webpack from 'webpack';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
+import { BuildPaths } from "./config/build/types/config";
+import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
 
-const config:webpack.Configuration = {
-    mode: "development",
+const paths: BuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.ts'),
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
-    },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
-    },
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, 'public', 'index.html')
-        }),
-        new webpack.ProgressPlugin(),
-    ],
-};
+    build: path.resolve(__dirname, 'dist'),
+    html: path.resolve(__dirname, 'public', 'index.html'),
+}
+
+const mode = "development";
+const isDev = mode === "development";
+
+const config: webpack.Configuration = buildWebpackConfig({
+    mode,
+    paths: paths,
+    isDev
+});
 
 
 export default config;
