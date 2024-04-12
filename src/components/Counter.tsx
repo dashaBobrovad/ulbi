@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./Counter.scss";
+import cx from "./Counter.module.scss";
 
 const Counter = () => {
     const [count, setCount] = useState(10);
@@ -13,7 +13,7 @@ const Counter = () => {
     }
 
     return (
-        <div>
+        <div className={cx.test}>
             <button onClick={increment}>+</button>
             <div>{count}</div>
             <button onClick={decrement}>-</button>
