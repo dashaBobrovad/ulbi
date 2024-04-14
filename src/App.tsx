@@ -1,11 +1,29 @@
-import React from 'react'
-import Counter from "./components/Counter"
-import "./index.scss";
+import React, { Suspense, useContext } from 'react'
+import { Link, Route, Routes } from "react-router-dom";
+import AboutPageLazy from "./pages/AboutPage/AboutPage.lazy";
+import MainPageLazy from "./pages/MainPage/MainPage.lazy";
+import "../src/styles/index.scss";
+import { useTheme } from "./theme/useTheme";
+
 const App = () => {
+    const { theme, toggleTheme } = useTheme();
+
     return (
-        <div className="app">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius voluptas eum distinctio ducimus accusantium ipsa ullam veritatis eligendi molestiae officia doloribus, repellat quis recusandae, veniam ea id eos soluta deleniti.
-            <Counter />
+        <div className={`app ${theme}`}>
+            <div>
+                <button onClick={toggleTheme}>TOGGLE THEME</button>
+            </div>
+            <div>
+                <Link to="/">Главная</Link>
+                <Link to="/about">О нас</Link>{", "}
+            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path="/" element={<MainPageLazy />} />
+                    <Route path="/about" element={<AboutPageLazy />} />
+                </Routes>
+            </Suspense>
+
         </div>
     )
 }
