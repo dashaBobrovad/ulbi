@@ -10,6 +10,10 @@
         // позволяет использовать обычные импорты и экспорты в webpack.config.ts
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {
