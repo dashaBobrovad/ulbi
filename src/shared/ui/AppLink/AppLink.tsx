@@ -1,6 +1,6 @@
-import React, {FC} from "react"
-import cx from "./AppLink.module.scss"
-import { cls } from "shared/lib/cls"
+import React, {FC} from "react";
+import { cls } from "shared/lib/cls";
+import cx from "./AppLink.module.scss";
 
 interface AppLinkProps {
     className?: string;

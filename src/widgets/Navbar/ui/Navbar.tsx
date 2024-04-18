@@ -1,7 +1,7 @@
-import React, { FC } from "react"
-import { cls } from "shared/lib/cls"
+import React, { FC } from "react";
+import { cls } from "shared/lib/cls";
 import { Link } from "react-router-dom";
-import cx from "./Navbar.module.scss"
+import cx from "./Navbar.module.scss";
 
 interface NavbarProps {
     className?: string;
