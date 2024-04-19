@@ -45,10 +45,37 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ]
     };
 
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: [
+                    "@babel/preset-env",
+                    "@babel/preset-react"
+                ],
+                plugins: [
+                    ["i18next-extract", { // optional
+                        "locales": [
+                            "ru",
+                            "en"
+                        ],
+                        "keyAsDefaultValue": [
+                            "en"
+                        ]
+                    }]
+                ]
+            }
+        }
+    }
+
     return [
+        // order is important
         svgLoader,
+        babelLoader,
         stylesLoader,
-        typescriptLoader,
+        typescriptLoader, // without ts-loader we would have to adjust babel
         fileLoader,
     ]
 } 
