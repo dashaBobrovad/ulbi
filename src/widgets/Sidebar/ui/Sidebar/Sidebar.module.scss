@@ -4,16 +4,21 @@
     background: var(--inverted-bg-color);
     position: relative;
     transition: width 0.5s ease;
+    overflow: hidden;
 }
 
-.collapsed{
+.collapsed {
     width: var(--sidebar-width-collapsed);
 }
 
-.switchers{
+.switchers {
     position: absolute;
     bottom: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.lang {
+    margin-left: 20px;
 }
