@@ -56,7 +56,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                     "@babel/preset-react"
                 ],
                 plugins: [
-                    ["i18next-extract", {
+                    ["i18next-extract", { // optional
                         "locales": [
                             "ru",
                             "en"
