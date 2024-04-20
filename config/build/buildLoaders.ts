@@ -1,9 +1,8 @@
 import * as webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from "./types/config";
+import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -12,19 +11,19 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const stylesLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     modules: {
-                        auto: (resPath: string) => Boolean((resPath.includes(".module"))),
+                        auto: (resPath: string) => Boolean((resPath.includes('.module'))),
                         localIdentName: isDev
-                            ? "[name]__[local]--[hash:base64:5]"
-                            : "[hash:base64:8]",
-                    }
+                            ? '[name]__[local]--[hash:base64:5]'
+                            : '[hash:base64:8]',
+                    },
                 },
             },
-            "sass-loader",
+            'sass-loader',
         ],
 
     };
@@ -40,9 +39,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
             {
-                loader: 'file-loader'
-            }
-        ]
+                loader: 'file-loader',
+            },
+        ],
     };
 
     const babelLoader = {
@@ -52,23 +51,23 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             loader: 'babel-loader',
             options: {
                 presets: [
-                    "@babel/preset-env",
-                    "@babel/preset-react"
+                    '@babel/preset-env',
+                    '@babel/preset-react',
                 ],
                 plugins: [
-                    ["i18next-extract", { // optional
-                        "locales": [
-                            "ru",
-                            "en"
+                    ['i18next-extract', { // optional
+                        locales: [
+                            'ru',
+                            'en',
                         ],
-                        "keyAsDefaultValue": [
-                            "en"
-                        ]
-                    }]
-                ]
-            }
-        }
-    }
+                        keyAsDefaultValue: [
+                            'en',
+                        ],
+                    }],
+                ],
+            },
+        },
+    };
 
     return [
         // order is important
@@ -77,5 +76,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         stylesLoader,
         typescriptLoader, // without ts-loader we would have to adjust babel
         fileLoader,
-    ]
-} 
+    ];
+}
