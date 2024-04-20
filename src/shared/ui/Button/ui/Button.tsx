@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { cls } from 'shared/lib/cls';
-import cx from './Button.module.scss';
+import React, { FC } from "react";
+import { cls } from "shared/lib/cls";
+import cx from "./Button.module.scss";
 
 export enum ThemeButton {
-    CLEAR = 'clear',
+    CLEAR = "clear",
 }
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
