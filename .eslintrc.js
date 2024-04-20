@@ -18,6 +18,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -35,6 +36,8 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
+        'i18next/no-literal-string': 2,
+        quotes: [1, 'double', { avoidEscape: true }],
     },
     globals: {
         __IS_DEV__: true,
