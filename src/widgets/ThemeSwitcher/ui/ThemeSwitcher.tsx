@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { cls } from "shared/lib/cls";
+import { cls } from "shared/lib/cls/cls";
 import { useTheme, Theme } from "app/providers/ThemeProvider";
 import DarkThemeIcon from "shared/assets/icons/theme-dark.svg";
 import LightThemeIcon from "shared/assets/icons/theme-light.svg";

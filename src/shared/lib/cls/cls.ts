@@ -1,8 +1,4 @@
-enum ModsField {
-    HOVERED = "hovered",
-}
-
-type Mods = Record<ModsField, boolean | string> | {};
+type Mods = Record<string, boolean | string> | {};
 
 export function cls(cls: string, mods?: Mods, additional?: string[]): string {
     return [
@@ -13,5 +9,5 @@ export function cls(cls: string, mods?: Mods, additional?: string[]): string {
         ...Object.entries(mods)
             .filter(([className, bool]) => !!bool)
             .map(([className]) => className),
-    ].join(" ");
+    ].join(" ").trim();
 }

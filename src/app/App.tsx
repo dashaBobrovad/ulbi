@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { cls } from "shared/lib/cls";
+import { cls } from "shared/lib/cls/cls";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Navbar } from "widgets/Navbar";
 import "app/styles/index.scss";

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { cls } from "shared/lib/cls";
+import { cls } from "shared/lib/cls/cls";
 import { useTheme, Theme } from "app/providers/ThemeProvider";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
 import { useTranslation } from "react-i18next";

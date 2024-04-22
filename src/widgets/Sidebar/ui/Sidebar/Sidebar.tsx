@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { cls } from "shared/lib/cls";
+import { cls } from "shared/lib/cls/cls";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { Button } from "shared/ui/Button";
 import { LangSwitcher } from "widgets/LangSwitcher";
