@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "unit": "jest --config src/shared/config/jest/jest.config.ts",
     "start": "webpack serve --env post=3000 --hot --host 0.0.0.0",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",

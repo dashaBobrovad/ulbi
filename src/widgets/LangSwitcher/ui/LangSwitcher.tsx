@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { cls } from "shared/lib/cls";
+import { cls } from "shared/lib/cls/cls";
 import { useTranslation } from "react-i18next";
 import { Button, ThemeButton } from "shared/ui/Button";
 
