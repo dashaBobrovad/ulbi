@@ -20,8 +20,12 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
     return (
         <div className={cls(cx.navbar, {}, [className])}>
             <div className={cx.links}>
-                <AppLink to="/" className={cx.mainLink} theme={linkTheme}>{t("main").toUpperCase()}</AppLink>
-                <AppLink to="/about" theme={linkTheme}>{t("about us").toUpperCase()}</AppLink>
+                <AppLink to="/" className={cx.mainLink} theme={linkTheme}>
+                    {t("main").toUpperCase()}
+                </AppLink>
+                <AppLink to="/about" theme={linkTheme}>
+                    {t("about us").toUpperCase()}
+                </AppLink>
             </div>
         </div>
     );
