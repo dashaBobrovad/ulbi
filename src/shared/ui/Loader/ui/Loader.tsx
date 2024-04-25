@@ -1,0 +1,17 @@
+import React, { FC } from "react";
+import { cls } from "shared/lib/cls/cls";
+import { useTranslation } from "react-i18next";
+import cx from "./Loader.module.scss";
+
+interface LoaderProps {
+    className?: string;
+}
+
+export const Loader: FC<LoaderProps> = ({ className }) => (
+    <div className={cls(cx.loader, {}, [className])}>
+        <div />
+        <div />
+        <div />
+        <div />
+    </div>
+);
