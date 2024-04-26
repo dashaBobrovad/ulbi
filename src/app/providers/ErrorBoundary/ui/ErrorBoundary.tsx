@@ -8,7 +8,7 @@ interface ErrorBoundaryState {
     hasError: boolean | null;
 }
 
-class ErrorBoundary
+export class ErrorBoundary
     extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     constructor(props: ErrorBoundaryProps) {
         super(props);
