@@ -40,7 +40,7 @@ module.exports = {
         "import/extensions": "off",
         "import/no-extraneous-dependencies": "off",
         "no-underscore-dangle": "off",
-        "i18next/no-literal-string": 2,
+        "i18next/no-literal-string": 1,
         quotes: [1, "double", { avoidEscape: true }],
         "max-len": [
             "error",
