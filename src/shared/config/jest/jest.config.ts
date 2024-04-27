@@ -4,6 +4,8 @@
  */
 
 export default {
+    rootDir: "../../../../",
+
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
 
@@ -19,6 +21,11 @@ export default {
     // up from the requiring module's location
     moduleDirectories: [
         "node_modules",
+        "src",
+    ],
+
+    modulePaths: [
+        '<rootDir>src',
     ],
 
     // An array of file extensions your modules use
@@ -33,15 +40,19 @@ export default {
         "node",
     ],
 
-    // A list of paths to directories that Jest should use to search for files in
-    roots: [
-        "../../",
-    ],
-
     // The glob patterns Jest uses to detect test files
     testMatch: [
-        "**/*(*.)@(spec|test).[tj]s?(x)",
+        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+
+    // A list of paths to modules that run some code to configure
+    // or set up the testing framework before each test
+    setupFilesAfterEnv: ['<rootDir>src/shared/config/jest/setupTest.ts'],
+
+    // The paths to modules that run some code to configure
+    // or set up the testing environment before each test
+    // setupFiles: ['./setupTest.ts'],
 
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -146,14 +157,6 @@ export default {
 
     // Allows you to use a custom runner instead of Jest's default test runner
     // runner: "jest-runner",
-
-    // The paths to modules that run some code to configure
-    // or set up the testing environment before each test
-    // setupFiles: [],
-
-    // A list of paths to modules that run some code to configure
-    // or set up the testing framework before each test
-    // setupFilesAfterEnv: [],
 
     // The number of seconds after which a test is considered as
     // slow and reported as such in the results.
