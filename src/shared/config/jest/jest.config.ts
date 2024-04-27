@@ -25,7 +25,7 @@ export default {
     ],
 
     modulePaths: [
-        '<rootDir>src',
+        "<rootDir>src",
     ],
 
     // An array of file extensions your modules use
@@ -43,12 +43,18 @@ export default {
     // The glob patterns Jest uses to detect test files
     testMatch: [
         // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
     ],
 
     // A list of paths to modules that run some code to configure
     // or set up the testing framework before each test
-    setupFilesAfterEnv: ['<rootDir>src/shared/config/jest/setupTest.ts'],
+    setupFilesAfterEnv: ["<rootDir>src/shared/config/jest/setupTest.ts"],
+
+    // A map from regular expressions to module names or to arrays of module names
+    // that allow to stub out resources with a single module
+    moduleNameMapper: {
+        "\\.s?css$": "identity-obj-proxy",
+    },
 
     // The paths to modules that run some code to configure
     // or set up the testing environment before each test
@@ -116,10 +122,6 @@ export default {
     // E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number.
     // maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
-
-    // A map from regular expressions to module names or to arrays of module names
-    // that allow to stub out resources with a single module
-    // moduleNameMapper: {},
 
     // An array of regexp pattern strings, matched against all module paths
     // before considered 'visible' to the module loader

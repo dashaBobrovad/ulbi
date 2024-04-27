@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { Button } from "shared/ui/Button/";
+import { Button } from "shared/ui/Button";
 
-describe("Button component", () => {
-    test("with only first param", () => {
+describe("Button", () => {
+    test("Test render", () => {
         render(<Button>TEST</Button>);
-        expect(screen.getByText("TEST").toBeInTheDocument());
+        expect(screen.getByText("TEST")).toBeInTheDocument();
     });
 });
