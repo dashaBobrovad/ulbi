@@ -54,6 +54,7 @@ export default {
     // that allow to stub out resources with a single module
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
+        "\\.svg": "<rootDir>src/shared/config/jest/jestEmptyComponent.tsx",
     },
 
     // The paths to modules that run some code to configure
