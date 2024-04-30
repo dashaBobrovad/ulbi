@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import { Button, ThemeButton } from "./Button";
 
 export default {
@@ -15,17 +14,17 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Text',
+    children: "Text",
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
-    children: 'Text',
+    children: "Text",
     theme: ThemeButton.CLEAR,
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
-    children: 'Text',
+    children: "Text",
     theme: ThemeButton.OUTLINE,
 };

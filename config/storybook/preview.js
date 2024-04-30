@@ -1,5 +1,5 @@
-// import { addDecorator } from '@storybook/react';
-// import { StyleDecorator } from './StyleDecorator/StyleDecorator';
+import { addDecorator } from '@storybook/react';
+import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 // import { ThemeDecorator } from './ThemeDecorator/ThemeDecorator';
 // import { Theme } from '../../src/app/providers/ThemeProvider';
 // import { RouterDecorator } from './RouterDecorator/RouterDecorator';
@@ -14,6 +14,6 @@ export const parameters = {
     },
 };
 
-// addDecorator(StyleDecorator);
+addDecorator(StyleDecorator);
 // addDecorator(ThemeDecorator(Theme.LIGHT));
 // addDecorator(RouterDecorator);
