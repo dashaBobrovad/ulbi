@@ -15,5 +15,9 @@ export const parameters = {
 };
 
 addDecorator(StyleDecorator);
+
+// декоратор можно указывать не только глобально, но и в компоненте
+// Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 addDecorator(ThemeDecorator(Theme.LIGHT));
+
 addDecorator(RouterDecorator);
