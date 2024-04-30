@@ -4,7 +4,7 @@
  */
 
 export default {
-    rootDir: "../../../../",
+    rootDir: "../..",
 
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
@@ -48,13 +48,13 @@ export default {
 
     // A list of paths to modules that run some code to configure
     // or set up the testing framework before each test
-    setupFilesAfterEnv: ["<rootDir>src/shared/config/jest/setupTest.ts"],
+    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTest.ts"],
 
     // A map from regular expressions to module names or to arrays of module names
     // that allow to stub out resources with a single module
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
-        "\\.svg": "<rootDir>src/shared/config/jest/jestEmptyComponent.tsx",
+        "\\.svg": "<rootDir>/config/jest/jestEmptyComponent.tsx",
     },
 
     // The paths to modules that run some code to configure
