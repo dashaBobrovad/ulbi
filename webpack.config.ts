@@ -1,6 +1,6 @@
 // * - тк некоторые из библиотек не поддерживают default (import)
 import * as path from "path";
-import * as webpack from "webpack";
+import webpack from "webpack";
 import { BuildEnv, BuildPaths } from "./config/build/types/config";
 import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
 
