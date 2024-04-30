@@ -6,3 +6,8 @@ export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
         <StoryComponent />
     </div>
 );
+
+// function loadStories() {
+//     document.body.className += `app ${Theme.LIGHT}`;
+// }
+// configure(loadStories, module);
