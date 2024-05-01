@@ -53,7 +53,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         // order is important
         svgLoader,
         babelLoader,
-        buildStylesLoader,
+        buildStylesLoader(isDev),
         typescriptLoader, // without ts-loader we would have to adjust babel
         fileLoader,
     ];
