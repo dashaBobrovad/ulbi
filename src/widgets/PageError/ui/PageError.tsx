@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { cls } from "shared/lib/cls/cls";
 import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui/Button";
+import { Button, ThemeButton } from "shared/ui/Button";
 import cx from "./PageError.module.scss";
 
 interface PageErrorProps {
@@ -18,7 +18,7 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
     return (
         <div className={cls(cx.pageerror, {}, [className])}>
             <p>{ t("Произошла непредвиденная ошибка") }</p>
-            <Button onClick={reload}>
+            <Button onClick={reload} theme={ThemeButton.OUTLINE}>
                 { t("Перезагрузить страницу") }
             </Button>
         </div>
