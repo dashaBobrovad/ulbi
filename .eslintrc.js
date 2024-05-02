@@ -48,6 +48,7 @@ module.exports = {
                 ignorePattern: "ignorePattern|^(import\\s.+\\sfrom\\s.+;$|export+\\sfunction\\s.+$)",
                 ignoreComments: true,
                 ignoreUrls: true,
+                code: 90,
             },
 
         ],

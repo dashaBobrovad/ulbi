@@ -1,11 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { cls } from "shared/lib/cls/cls";
 
-const MainPage = () => {
+interface MainPageProps {
+    className?: string;
+}
+
+const MainPage: FC<MainPageProps> = ({ className }) => {
     const { t } = useTranslation("main");
 
     return (
-        <div>{t("main")}</div>
+        <div className={cls("", {}, [className])}>{t("main")}</div>
     );
 };
 

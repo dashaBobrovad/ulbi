@@ -1,13 +1,9 @@
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildStylesLoader } from "./loaders/buildStylesLoader";
+import { buildSvgLoader } from "./loaders/buildSvgLoader";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-    const svgLoader = {
-        test: /\.svg$/,
-        use: ["@svgr/webpack"],
-    };
-
     // babel уже включен в ts
     const typescriptLoader = {
         test: /\.tsx?$/,
@@ -51,9 +47,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     return [
         // order is important
-        svgLoader,
+        buildSvgLoader(),
         babelLoader,
-        buildStylesLoader,
+        buildStylesLoader(isDev),
         typescriptLoader, // without ts-loader we would have to adjust babel
         fileLoader,
     ];

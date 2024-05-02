@@ -1,7 +1,8 @@
 // * - тк некоторые из библиотек не поддерживают default (import)
 import * as path from "path";
-import webpack from "webpack";
+import webpack, { RuleSetRule } from "webpack";
 import { buildStylesLoader } from "../build/loaders/buildStylesLoader";
+import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 import { BuildPaths } from "../build/types/config";
 
 export default ({ config }: {config: webpack.Configuration}) => {
@@ -13,6 +14,16 @@ export default ({ config }: {config: webpack.Configuration}) => {
     };
     config.resolve.modules.push(paths.src);
     config.resolve.extensions.push(".ts", ".tsx");
+
+    /* eslint no-param-reassign: "error" */
+    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+        if (/svg/.test(rule.test as string)) {
+            return { ...rule, exclude: /\.svg$/ };
+        }
+        return rule;
+    });
+
+    config.module.rules.push(buildSvgLoader());
 
     config.module.rules.push(buildStylesLoader(true));
 
