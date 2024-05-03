@@ -97,6 +97,9 @@
     "stylelint-config-standard-scss": "^3.0.0"
   },
   "loki": {
+    "diffingEngine": "looks-same",
+    "chromeTolerance": 100,
+    "chromeLoadTimeout": 120000,
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
