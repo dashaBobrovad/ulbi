@@ -4,3 +4,4 @@
 # "build:prod": "webpack --env mode=production",
 # "build:dev": "webpack --env mode=development"
 # arch: https://feature-sliced.design/
+# test: unit (JEST) screenshot (LOKI)
