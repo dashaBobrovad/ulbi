@@ -3,6 +3,7 @@
 
 # dist
 /dist
+./storybook-static
 
 ### VisualStudioCode ###
 .vscode/*  
