@@ -1,5 +1,5 @@
 import { screen, fireEvent } from "@testing-library/react";
-import { renderWithTranslationForTest } from "shared/lib/renderWithTranslationForTest/renderWithTranslationForTest";
+import { renderWithTranslationForTest } from "shared/lib/test/renderWithTranslationForTest/renderWithTranslationForTest";
 import { Sidebar } from "widgets/Sidebar";
 
 describe("Sidebar test", () => {
