@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { cls } from "shared/lib/cls/cls";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { Button, ThemeButton } from "shared/ui/Button";
+import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { useTranslation } from "react-i18next";
 import cx from "./Sidebar.module.scss";
@@ -30,13 +30,18 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
                 className={cx.collapseBtn}
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
-                theme={ThemeButton.BACKGROUND_INVERTED}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                square
+                size={ButtonSize.L}
             >
-                { collapsed ? "⟶" : "⟵" }
+                { collapsed ? ">" : "<" }
             </Button>
             <div className={cx.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cx.lang} />
+                <LangSwitcher
+                    className={cx.lang}
+                    short={collapsed}
+                />
             </div>
         </div>
     );
