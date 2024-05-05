@@ -1,4 +1,4 @@
-import React, { FC, useState, Fragment } from "react";
+import React, { FC, useState } from "react";
 import { cls } from "shared/lib/cls/cls";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button";
