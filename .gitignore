@@ -1,12 +1,16 @@
 # dependencies
-/node_modules
+node_modules
 
 # dist
 /dist
-./storybook-static
+/storybook-static
 
 ### VisualStudioCode ###
 .vscode/*  
 
 # extractedTranslations
 /extractedTranslations
+
+# loki
+.loki/report.html
+.loki/report.json
