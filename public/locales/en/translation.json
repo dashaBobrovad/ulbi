@@ -1,6 +1,7 @@
 {
-    "lang": "ENGLISH",
-    "toggle": "on/of",
-    "Произошла непредвиденная ошибка": "An unexpected error occurred",
-    "Перезагрузить страницу": "Reload page"
+  "lang": "ENGLISH",
+  "lang-short": "ENG",
+  "toggle": "on/of",
+  "Произошла непредвиденная ошибка": "An unexpected error occurred",
+  "Перезагрузить страницу": "Reload page"
 }

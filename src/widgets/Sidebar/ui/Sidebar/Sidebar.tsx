@@ -1,9 +1,14 @@
 import React, { FC, useState } from "react";
 import { cls } from "shared/lib/cls/cls";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { Button, ThemeButton } from "shared/ui/Button";
+import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { useTranslation } from "react-i18next";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
+import { Theme, useTheme } from "app/providers/ThemeProvider";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import AboutIcon from "shared/assets/icons/about-20-20.svg";
+import MainIcon from "shared/assets/icons/main-20-20.svg";
 import cx from "./Sidebar.module.scss";
 
 interface SidebarProps {
@@ -11,11 +16,16 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = ({ className }) => {
+    const { theme } = useTheme();
     const [collapsed, setCollapsed] = useState(false);
     const { t } = useTranslation();
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
+
+    const linkTheme = theme === Theme.LIGHT
+        ? AppLinkTheme.PRIMARY
+        : AppLinkTheme.SECONDARY;
 
     return (
         <div
@@ -30,13 +40,36 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
                 className={cx.collapseBtn}
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
-                theme={ThemeButton.BACKGROUND_INVERTED}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                square
+                size={ButtonSize.L}
             >
-                { collapsed ? "⟶" : "⟵" }
+                {collapsed ? ">" : "<"}
             </Button>
+            <div className={cx.items}>
+                <AppLink
+                    to={RoutePath.main}
+                    className={cx.item}
+                    theme={linkTheme}
+                >
+                    <MainIcon className={cx.icon} />
+                    <span className={cx.link}>{ t("main").toUpperCase() }</span>
+                </AppLink>
+                <AppLink
+                    to={RoutePath.about}
+                    theme={linkTheme}
+                    className={cx.item}
+                >
+                    <AboutIcon className={cx.icon} />
+                    <span className={cx.link}>{ t("about").toUpperCase() }</span>
+                </AppLink>
+            </div>
             <div className={cx.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cx.lang} />
+                <LangSwitcher
+                    className={cx.lang}
+                    short={collapsed}
+                />
             </div>
         </div>
     );
