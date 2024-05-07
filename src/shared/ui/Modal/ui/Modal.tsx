@@ -1,4 +1,6 @@
-import React, { FC, ReactNode, MouseEvent, useState } from "react";
+import React, {
+    FC, ReactNode, MouseEvent, useState,
+} from "react";
 import { cls } from "shared/lib/cls/cls";
 import cx from "./Modal.module.scss";
 
