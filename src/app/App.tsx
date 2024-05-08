@@ -4,7 +4,6 @@ import { useTheme } from "app/providers/ThemeProvider";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { AppRouter } from "app/providers/router/AppRouter";
-import "app/styles/index.scss";
 import { Modal } from "shared/ui/Modal";
 import { Button } from "shared/ui/Button";
 
