@@ -1,5 +1,6 @@
 import React, {
     FC, ReactNode, MouseEvent, useState,
+    useRef,
 } from "react";
 import { cls } from "shared/lib/cls/cls";
 import cx from "./Modal.module.scss";
@@ -11,6 +12,8 @@ interface ModalProps {
     onClose?: ()=> void;
 }
 
+const ANIMATION_DELAY = 300;
+
 export const Modal: FC<ModalProps> = (props) => {
     const {
         className,
@@ -20,10 +23,15 @@ export const Modal: FC<ModalProps> = (props) => {
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = () => {
         if (onClose) {
-            onClose();
+            setIsClosing(true);
+            timerRef.current = setTimeout(() => {
+                onClose();
+                setIsClosing(false);
+            }, ANIMATION_DELAY);
         }
     };
 
@@ -33,6 +41,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
     const mods = {
         [cx.opened]: isOpen,
+        [cx.isClosing]: isClosing,
     };
 
     return (
