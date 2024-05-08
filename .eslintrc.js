@@ -61,4 +61,12 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ["**/src/**/*.{test, stories}.{rs, tsx}"],
+            rules: {
+                "max-len": "off",
+            },
+        },
+    ],
 };
