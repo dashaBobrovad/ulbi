@@ -2,6 +2,7 @@
   "lang": "ENGLISH",
   "lang-short": "ENG",
   "toggle": "on/of",
-  "Произошла непредвиденная ошибка": "An unexpected error occurred",
-  "Перезагрузить страницу": "Reload page"
+  "An unexpected error occurred": "An unexpected error occurred",
+  "Reload page": "Reload page",
+  "auth": "Auth"
 }
