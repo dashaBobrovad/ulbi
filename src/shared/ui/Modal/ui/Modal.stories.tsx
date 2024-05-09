@@ -18,12 +18,14 @@ const Template:
 export const Light = Template.bind({});
 Light.args = {
     isOpen: true,
-    children: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, accusantium sequi. Nam, ipsam ullam obcaecati voluptatum, deserunt dolorum earum error rem consequuntur non ipsum tenetur nulla beatae perferendis consequatur aliquid.",
+    // eslint-disable-next-line max-len
+    children: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, accusantium sequi.Nam, ipsam ullam obcaecati voluptatum, deserunt dolorum earum error rem consequuntur non ipsum tenetur nulla beatae perferendis consequatur aliquid.",
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
     isOpen: true,
+    // eslint-disable-next-line max-len
     children: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, accusantium sequi. Nam, ipsam ullam obcaecati voluptatum, deserunt dolorum earum error rem consequuntur non ipsum tenetur nulla beatae perferendis consequatur aliquid.",
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
