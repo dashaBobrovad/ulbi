@@ -10,7 +10,9 @@ const AboutPage: FC<AboutPageProps> = ({ className }) => {
     const { t } = useTranslation("about");
 
     return (
-        <div className={cls("", {}, [className])}>{t("about us")}</div>
+        <div className={cls("", {}, [className])}>
+            {t("about us")}
+        </div>
     );
 };
 

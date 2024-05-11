@@ -10,7 +10,9 @@ const MainPage: FC<MainPageProps> = ({ className }) => {
     const { t } = useTranslation("main");
 
     return (
-        <div className={cls("", {}, [className])}>{t("main")}</div>
+        <div className={cls("", {}, [className])}>
+            {t("main")}
+        </div>
     );
 };
 

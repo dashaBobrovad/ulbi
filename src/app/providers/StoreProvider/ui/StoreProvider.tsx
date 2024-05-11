@@ -1,11 +1,11 @@
 import React, { FC, ReactNode } from "react";
 import { Provider } from "react-redux";
 import { createReduxStore } from "../config/store";
-import { StateSChema } from "../config/StateSchema";
+import { StateSchema } from "../config/StateSchema";
 
 interface StoreProviderProps {
     children?: ReactNode;
-    initialState?: StateSChema;
+    initialState?: StateSchema;
 }
 
 export const StoreProvider: FC<StoreProviderProps> = (props) => {
