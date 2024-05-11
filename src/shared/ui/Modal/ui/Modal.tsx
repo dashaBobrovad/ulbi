@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import { cls } from "shared/lib/cls/cls";
 import { Portal } from "shared/ui/Portal";
+import { useTheme } from "app/providers/ThemeProvider";
 import cx from "./Modal.module.scss";
 
 interface ModalProps {
@@ -24,6 +25,8 @@ export const Modal: FC<ModalProps> = (props) => {
         isOpen,
         onClose,
     } = props;
+
+    const { theme } = useTheme();
 
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -66,7 +69,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
     return (
         <Portal>
-            <div className={cls(cx.modal, mods, [className])}>
+            <div className={cls(cx.modal, mods, [className, theme, "app_modal"])}>
                 <div
                     className={cx.overlay}
                     onClick={closeHandler}
