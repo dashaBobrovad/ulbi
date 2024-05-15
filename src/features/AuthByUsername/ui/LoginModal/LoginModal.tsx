@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { cls } from "shared/lib/cls/cls";
-import { useTranslation } from "react-i18next";
 import { Modal } from "shared/ui/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
 
@@ -17,13 +16,12 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
         onClose,
     } = props;
 
-    const { t } = useTranslation();
-
     return (
         <Modal
             className={cls("", {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
+            lazy // for autofocus & smaller bundle
         >
             <LoginForm />
         </Modal>
