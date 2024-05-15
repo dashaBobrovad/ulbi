@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { cls } from "shared/lib/cls/cls";
-import { Modal } from "shared/ui/Modal";
+import { LoginModal } from "features/AuthByUsername";
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { useTranslation } from "react-i18next";
 import cx from "./Navbar.module.scss";
@@ -14,21 +14,25 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
 
     const [isAuthOpen, setIsAuthOpen] = useState(false);
 
-    const onToggleModal = () => {
-        setIsAuthOpen((prev) => !prev);
+    const onCloseModal = () => {
+        setIsAuthOpen(false);
+    };
+
+    const onShowModal = () => {
+        setIsAuthOpen(true);
     };
 
     return (
-        <div className={cls(cx.navbar, {}, [className])}>
+        <div className={cls(cx.Navbar, {}, [className])}>
             <div className={cx.links}>
                 <Button
-                    onClick={onToggleModal}
+                    onClick={onShowModal}
                     theme={ButtonTheme.CLEAR_INVERTED}
                 >
                     {t("auth")}
                 </Button>
             </div>
-            <Modal isOpen={isAuthOpen} onClose={onToggleModal}>Auth modal</Modal>
+            <LoginModal isOpen={isAuthOpen} onClose={onCloseModal} />
         </div>
     );
 };

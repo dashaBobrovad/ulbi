@@ -8,7 +8,7 @@ interface PageLoaderProps {
 }
 
 export const PageLoader: FC<PageLoaderProps> = ({ className }) => (
-    <div className={cls(cx.pageloader, {}, [className])}>
+    <div className={cls(cx.PageLoader, {}, [className])}>
         <Loader />
     </div>
 );
