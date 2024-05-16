@@ -7,7 +7,7 @@ interface LoaderProps {
 }
 
 export const Loader: FC<LoaderProps> = ({ className }) => (
-    <div className={cls(cx.loader, {}, [className])}>
+    <div className={cls(cx.Loader, {}, [className])}>
         <div />
         <div />
         <div />

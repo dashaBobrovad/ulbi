@@ -31,7 +31,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         <div
             data-testid="sidebar"
             className={cls(
-                cx.sidebar,
+                cx.Sidebar,
                 { [cx.collapsed]: collapsed },
                 [className],
             )}

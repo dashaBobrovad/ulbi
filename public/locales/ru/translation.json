@@ -1,8 +1,10 @@
 {
-    "lang": "РУССКИЙ",
-    "lang-short": "РУС",
-    "toggle": "вкл/выкл",
-    "An unexpected error occurred": "Произошла непредвиденная ошибка",
-    "Reload page": "Перезагрузить страницу",
-    "auth": "Войти"
+  "lang": "РУССКИЙ",
+  "lang-short": "РУС",
+  "toggle": "вкл/выкл",
+  "An unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Перезагрузить страницу",
+  "auth": "Войти",
+  "username": "имя",
+  "password": "пароль"
 }

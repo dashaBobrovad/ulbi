@@ -4,5 +4,7 @@
   "toggle": "on/of",
   "An unexpected error occurred": "An unexpected error occurred",
   "Reload page": "Reload page",
-  "auth": "Auth"
+  "auth": "Auth",
+  "username": "username",
+  "password": "password"
 }

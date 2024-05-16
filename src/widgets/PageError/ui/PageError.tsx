@@ -16,7 +16,7 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
     };
 
     return (
-        <div className={cls(cx.pageerror, {}, [className])}>
+        <div className={cls(cx.PageError, {}, [className])}>
             <p>{ t("An unexpected error occurred") }</p>
             <Button onClick={reload} theme={ButtonTheme.OUTLINE}>
                 { t("Reload page") }
