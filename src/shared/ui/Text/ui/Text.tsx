@@ -12,7 +12,7 @@ export const Text: FC<TextProps> = (props) => {
     const {
         className,
         title,
-        text
+        text,
     } = props;
 
     return (
