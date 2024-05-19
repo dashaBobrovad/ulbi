@@ -15,11 +15,9 @@ export const parameters = {
     },
 };
 
-addDecorator(StyleDecorator);
-
-addDecorator(TranslationDecorator);
 // декоратор можно указывать не только глобально, но и в компоненте
 // Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
+addDecorator(StyleDecorator);
+addDecorator(TranslationDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
-
 addDecorator(RouterDecorator);
