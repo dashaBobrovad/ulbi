@@ -1,9 +1,10 @@
 import React, { FC, memo, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { cls } from "shared/lib/cls/cls";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { Input } from "shared/ui/Input";
-import { useDispatch, useSelector } from "react-redux";
+import { Text, TextTheme } from "shared/ui/Text";
 import { loginActions } from "../../modal/slice/loginSlice";
 import { getLoginState } from "../../modal/selectors/getLoginState/getLoginState";
 import { loginByUsername } from "../../modal/services/loginByUsername";
@@ -49,8 +50,9 @@ const LoginForm: FC<LoginFormProps> = ({ className }) => {
 
     return (
         <div className={cls(cx.LoginForm, {}, [className])}>
+            <Text title={t("Auth form")} />
             {
-                error && <div>{error}</div>
+                error && <Text theme={TextTheme.EROOR} text={error} />
             }
             <Input
                 className={cx.input}

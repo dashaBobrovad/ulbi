@@ -6,5 +6,8 @@
   "Reload page": "Перезагрузить страницу",
   "auth": "Войти",
   "username": "имя",
-  "password": "пароль"
+  "password": "пароль",
+  "Auth form": "Форма авторизации",
+  "you entered an incorrect login or password": "вы ввели неверный логин или пороль",
+  "Log out": "Выйти"
 }
