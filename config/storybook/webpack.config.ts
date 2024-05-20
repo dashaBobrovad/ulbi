@@ -6,13 +6,13 @@ import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 import { BuildPaths } from "../build/types/config";
 
 export default ({ config }: {config: webpack.Configuration}) => {
-    const paths: BuildPaths = {
-        entry: "",
-        build: "",
-        html: "",
-        src: path.resolve(__dirname, "..", "..", "src"),
-    };
-    config.resolve.modules.push(paths.src);
+    // const paths: BuildPaths = {
+    //     entry: "",
+    //     build: "",
+    //     html: "",
+    //     src: path.resolve(__dirname, "..", "..", "src"),
+    // };
+    config.resolve.modules.push("../../src");
     config.resolve.extensions.push(".ts", ".tsx");
 
     /* eslint no-param-reassign: "error" */
