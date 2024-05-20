@@ -1,6 +1,6 @@
 // * - тк некоторые из библиотек не поддерживают default (import)
 import * as path from "path";
-import webpack, { RuleSetRule } from "webpack";
+import webpack, { DefinePlugin, RuleSetRule } from "webpack";
 import { buildStylesLoader } from "../build/loaders/buildStylesLoader";
 import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 import { BuildPaths } from "../build/types/config";
@@ -10,7 +10,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         entry: "",
         build: "",
         html: "",
-        src: path.resolve(__dirname, "..", "..", "src"),
+        src: "../../src",
     };
     config.resolve.modules.push(paths.src);
     config.resolve.extensions.push(".ts", ".tsx");
@@ -26,6 +26,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.module.rules.push(buildSvgLoader());
 
     config.module.rules.push(buildStylesLoader(true));
+
+    config.plugins.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
     return config;
 };
